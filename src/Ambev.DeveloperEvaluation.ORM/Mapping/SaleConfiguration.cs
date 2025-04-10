@@ -14,42 +14,14 @@ namespace Ambev.DeveloperEvaluation.ORM.Mapping
             builder.HasKey(u => u.Id);
             builder.Property(u => u.Id).HasColumnType("uuid").HasDefaultValueSql("gen_random_uuid()");
                                  
-            builder.Property(s => s.SaleNumber).IsRequired()
-                   .HasMaxLength(50);
-
-            
-            builder.Property(s => s.SaleDate)
-                   .IsRequired();
-
-            
-            builder.Property(s => s.CustomerId)
-                   .IsRequired()
-                   .HasColumnType("uuid");
-
-            
-            builder.Property(s => s.CustomerName)
-                   .IsRequired()
-                   .HasMaxLength(100);
-
-            
-            builder.Property(s => s.BranchId)
-                   .IsRequired()
-                   .HasColumnType("uuid");
-
-           
-            builder.Property(s => s.BranchName)
-                   .IsRequired()
-                   .HasMaxLength(100);
-
-            
-            builder.Property(s => s.TotalAmount)
-                   .IsRequired()
-                   .HasColumnType("decimal(18,2)");
-
-            
-            builder.Property(s => s.IsCanceled)
-                   .IsRequired();
-
+            builder.Property(s => s.SaleNumber).IsRequired().HasMaxLength(50);            
+            builder.Property(s => s.SaleDate).IsRequired();            
+            builder.Property(s => s.CustomerId).IsRequired().HasColumnType("uuid");            
+            builder.Property(s => s.CustomerName).IsRequired().HasMaxLength(100);            
+            builder.Property(s => s.BranchId).IsRequired().HasColumnType("uuid");           
+            builder.Property(s => s.BranchName).IsRequired().HasMaxLength(100);            
+            builder.Property(s => s.TotalAmount).IsRequired().HasColumnType("decimal(18,2)");            
+            builder.Property(s => s.IsCanceled).IsRequired();
             
             builder.HasMany(s => s.Items)
                    .WithOne()
