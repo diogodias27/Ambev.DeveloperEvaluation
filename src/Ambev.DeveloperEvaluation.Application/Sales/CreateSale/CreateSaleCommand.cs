@@ -6,16 +6,16 @@ using MediatR;
 namespace Ambev.DeveloperEvaluation.Application.Sales.CreateSale;
 
 /// <summary>
-/// Command for creating a new user.
+/// Command for creating a new sale.
 /// </summary>
 /// <remarks>
-/// This command is used to capture the required data for creating a user, 
-/// including username, password, phone number, email, status, and role. 
+/// This command is used to capture the required data for creating a sale, 
+/// including salename, password, phone number, email, status, and role. 
 /// It implements <see cref="IRequest{TResponse}"/> to initiate the request 
-/// that returns a <see cref="CreateUserResult"/>.
+/// that returns a <see cref="CreatesaleResult"/>.
 /// 
 /// The data provided in this command is validated using the 
-/// <see cref="CreateUserCommandValidator"/> which extends 
+/// <see cref="CreateSaleCommandValidator"/> which extends 
 /// <see cref="AbstractValidator{T}"/> to ensure that the fields are correctly 
 /// populated and follow the required rules.
 /// </remarks>
